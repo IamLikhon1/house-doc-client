@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Awlad Hossain",
+        "title": "Product Designer",
+        "pic": "https://img.freepik.com/free-photo/young-happy-man-standing-isolated_171337-1127.jpg?w=1060&t=st=1704200094~exp=1704200694~hmac=7ee71c62cb720bc5bbefa6ecb3abb02d9563dbc4a3031f18a0a93d6d6a244ba8",
+        "des": "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknow printer tool a galley of type and scrambled it to make type specimen book has survived not only five centurines."
+    },
+    {
+        "id": 2,
+        "name": "Md.Asaduzzaman Likhon",
+        "title": "Web Developer",
+        "pic": "https://img.freepik.com/free-photo/portrait-young-smiling-handsome-model-man-dressed-gray-casual-hoodie-clothes-posing-white-wall-isolated_158538-6978.jpg?w=900&t=st=1704200126~exp=1704200726~hmac=eb218ff4f9eb374251eace20c3801d6ea2ac8e0018cbdbbd9f35657d5eda38af",
+        "des": "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknow printer tool a galley of type and scrambled it to make type specimen book has survived not only five centurines."
+    },
+    {
+        "id": 3,
+        "name": "Shakil Hussein",
+        "title": "UI/UX",
+        "pic": "https://img.freepik.com/free-photo/smiling-man-with-arms-crossed_1149-1711.jpg?w=740&t=st=1704200155~exp=1704200755~hmac=06ea917ff106c838d81e15c009df0a4cb8b1fbc28a84d05aad432cfcdb57ef44",
+        "des": "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknow printer tool a galley of type and scrambled it to make type specimen book has survived not only five centurines."
+    },
+    {
+        "id": 4,
+        "name": "Faisal Khan",
+        "title": "Mechanical Engineer",
+        "pic": "https://img.freepik.com/free-photo/man-white_1368-3544.jpg?w=740&t=st=1704200192~exp=1704200792~hmac=0418c1997fd2c58a3d11e859e805a8aad6eb1a18290090becd1ff318c47c0fee",
+        "des": "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknow printer tool a galley of type and scrambled it to make type specimen book has survived not only five centurines."
+    }
+]

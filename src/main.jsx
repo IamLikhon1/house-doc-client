@@ -12,35 +12,41 @@ import Login from './Pages/LoginPage/Login';
 import Register from './Pages/RegisterPage/Register';
 import Service from './Pages/ServicesPage/Service';
 import Doctor from './Pages/DoctorsPage/Doctor';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 
+// Create a client
+const queryClient = new QueryClient()
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main/>,
-    children:[
+    element: <Main />,
+    children: [
       {
-        path:'/',
-        element:<Home/>
+        path: '/',
+        element: <Home />
       },
       {
-        path:'/Appointment',
-        element:<AppointmentPage/>
+        path: '/Appointment',
+        element: <AppointmentPage />
       },
       {
-        path:'/Doctors',
-        element:<Doctor/>
+        path: '/Doctors',
+        element: <Doctor />
       },
       {
-        path:'/services',
-        element:<Service/>
+        path: '/services',
+        element: <Service />
       },
       {
-        path:'/login',
-        element:<Login/>
+        path: '/login',
+        element: <Login />
       },
       {
-        path:'/register',
-        element:<Register/>
+        path: '/register',
+        element: <Register />
       }
     ]
   },
@@ -48,6 +54,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>,
 )

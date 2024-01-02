@@ -9,7 +9,7 @@ function NavBar() {
     setIsOpen(!isOpen);
   };
   return (
-    <nav className="bg-[#07332F] p-1">
+    <nav className="bg-[#07332F] p-1 container mx-auto">
       {/* <TopLoaderAnimation progress={progress}setProgress={setProgress}/> */}
       <div className="mx-auto sm:pl-6 lg:pl-8">
         <div className="flex items-center justify-between h-16">
