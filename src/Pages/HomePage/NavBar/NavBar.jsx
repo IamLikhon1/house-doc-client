@@ -1,5 +1,6 @@
 import { useState } from "react";
 import logo from '../../../assets/Logo.png'
+import { Link } from "react-router-dom";
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   // const [progress, setProgress] = useState(0)
@@ -13,57 +14,58 @@ function NavBar() {
       <div className="mx-auto sm:pl-6 lg:pl-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex items-center ">
+            {/* logo */}
+            <div>
 
-              <img src={logo} className="w-[130px] lg:w-[180px] lg:pl-2" alt="" />
+              <Link to='/'> <img src={logo} className="w-[130px] lg:w-[180px] lg:pl-2 cursor-pointer" alt="website Logo" /></Link>
 
             </div>
 
-            <div className="hidden md:block ml-96">
-              <div className="space-x-8 ml-96">
-                <a
+            <div className="hidden lg:block lg:ml-96">
+              <div className="space-x-6 lg:ml-60">
+                <Link
                   // onClick={() => setProgress(100)}
-                  href="/"
-                  className="text-white  px-3 py-2 rounded-md text-lg font-medium duration-500"
+                  to="/"
+                  className="text-white  px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582] duration-500"
                 >
                   Home
-                </a>
-                <a
+                </Link>
+                <Link
                   // onClick={() => setProgress(100)}
-                  href="#about"
-                  className="text-white px-3 py-2 rounded-md text-lg font-medium duration-500 "
+                  to="/Appointment"
+                  className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582] duration-500 "
                 >
-                  About
-                </a>
-                <a
+                  Appointment
+                </Link>
+                <Link
                   // onClick={() => setProgress(100)}
-                  href="#skills"
-                  className="text-white px-3 py-2 rounded-md text-lg font-medium duration-500"
+                  to="/Doctors"
+                  className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
                 >
-                  Skills
-                </a>
-                <a
+                  Doctors
+                </Link>
+                <Link
                   // onClick={() => setProgress(100)}
-                  href="#Project"
-                  className="text-white px-3 py-2 rounded-md text-lg font-medium duration-500"
+                  to='/Services'
+                  className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
                 >
-                  Project
-                </a>
-                <a
+                  Services
+                </Link>
+                <Link
                   // onClick={() => setProgress(100)}
-                  href="#contact"
-                  className="text-white px-3 py-2 rounded-md text-lg font-medium duration-500"
+                  to='/login'
+                  className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
                 >
-                  Contact
-                </a>
+                  Login
+                </Link>
               </div>
 
             </div>
           </div>
-          <div className="flex md:hidden">
+          <div className="flex lg:hidden">
             <button
               onClick={toggleNavbar}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-orange-400 focus:outline-none focus:bg-orange-400 focus:text-white transition duration-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-green-800 focus:outline-none focus:bg-green-800  focus:text-white"
             >
               <svg
                 className="h-6 w-6"
@@ -93,38 +95,38 @@ function NavBar() {
       </div>
       {/* smaller device */}
       {isOpen && (
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="text-white block px-3 py-2 rounded-md text-base font-medium "
             >
               Home
-            </a>
-            <a
-              href="#about"
+            </Link>
+            <Link
+              to="/Appointment"
               className="text-white  block px-3 py-2 rounded-md text-base font-medium"
             >
-              About
-            </a>
-            <a
-              href="#skills"
+              Appointment
+            </Link>
+            <Link
+              to="/Doctors"
               className="text-white  block px-3 py-2 rounded-md text-base font-medium"
             >
-              Skills
-            </a>
-            <a
-              href="#project"
+              Doctors
+            </Link>
+            <Link
+              to='/Services'
               className="text-white  block px-3 py-2 rounded-md text-base font-medium"
             >
-              Project
-            </a>
-            <a
-              href="#contact"
+              Services
+            </Link>
+            <Link
+              to='/login'
               className="text-white  block px-3 py-2 rounded-md text-base font-medium"
             >
-              Contact
-            </a>
+              Login
+            </Link>
           </div>
         </div>
       )}
