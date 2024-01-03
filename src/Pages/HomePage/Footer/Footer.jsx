@@ -55,6 +55,10 @@ function Footer() {
           </p>
         </div>
       </div>
+      <div className='mt-10 text-center'>
+        <hr className='border border-[#CECECE] w-1/2 mx-auto' />
+        <p className='mt-5 text-[#6C6B6B]'>Copyright © 2022 - All right reserved by Doc House Ltd</p>
+      </div>
 
     </div>
   )
