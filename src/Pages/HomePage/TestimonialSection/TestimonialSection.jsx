@@ -20,7 +20,7 @@ function TestimonialSection() {
             ),
     })
     if (isLoading) return 'Loading...'
-    console.log(data);
+    // console.log(data);
     return (
         <div className="max-w-7xl mx-auto">
             <div className="text-center my-10 px-1">
