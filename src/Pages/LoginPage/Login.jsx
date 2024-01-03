@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom"
 import SignInAndLoginImage from "../../SharedComponents/SignInAndLoginImage/SignInAndLoginImage";
+import SocialSignIn from "../../SharedComponents/SocialSignIn/SocialSignIn";
 
 function Login() {
   const {
@@ -31,7 +32,7 @@ function Login() {
           {/* title */}
           <div>
             <h2
-              className="text-3xl font-bold text-center mb-10">Sign Up to Doc House</h2>
+              className="text-3xl font-bold text-center mb-10">Sign In to Doc House</h2>
           </div>
           {/* input */}
           <div className="mt-5 lg:mt-8">
@@ -63,10 +64,10 @@ function Login() {
             <div>
               <p className="my-5 font-semibold text-center">OR Login With</p>
 
-              {/* <SocialSignIn /> */}
+              <SocialSignIn />
             </div>
           </div>
-          <p className="text-[#6C6B6B] text-base mt-1 text-center">Please register at first. Go to <Link to='/register' className="font-semibold text-lg text-[#F7A582]">SIGN UP</Link></p>
+          <p className="text-[#6C6B6B] text-base mt-4 text-center">Please register at first. Go to <Link to='/register' className="font-semibold text-lg text-[#F7A582]">SIGN UP</Link></p>
         </div>
         {/* form */}
 
