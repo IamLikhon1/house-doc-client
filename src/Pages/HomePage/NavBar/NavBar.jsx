@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import logo from '../../../assets/Logo.png'
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
+import toast from "react-hot-toast";
 function NavBar() {
+  const { user, logOutUser } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   // const [progress, setProgress] = useState(0)
 
+  const handleLogOut = () => {
+    logOutUser()
+    .then(() => { })
+    
+    .catch(error => {
+      console.log(error)
+    })
+    toast.success('You Logout successfully')
+  }
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
@@ -51,13 +63,19 @@ function NavBar() {
                 >
                   Services
                 </Link>
-                <Link
+                {user?<Link
+                  // onClick={() => setProgress(100)}
+                  onClick={handleLogOut}
+                  className="text-white px-3 py-2 rounded-md text-lg font-semibold bg-[#F7A582] duration-500 cursor-pointer"
+                >
+                  Log Out
+                </Link>:<Link
                   // onClick={() => setProgress(100)}
                   to='/login'
                   className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
                 >
                   Login
-                </Link>
+                </Link>}
               </div>
 
             </div>
