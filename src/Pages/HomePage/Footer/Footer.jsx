@@ -1,7 +1,7 @@
 import footerLogo from '../../../assets/FooterLogo.png'
 function Footer() {
   return (
-    <div className='bg-[#F3F3F3] py-20 mt-10'>
+    <div className='bg-[#F3F3F3] pt-16 pb-5 mt-10'>
       {/* parent div */}
       <div className='max-w-7xl mx-auto grid lg:grid-cols-4 gap-5 text-center lg:text-start '>
         {/* logo */}
@@ -16,11 +16,11 @@ function Footer() {
           <p className='text-start text-[#3B3A3A] mt-5 pl-2'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. has been since the printer took.</p>
           {/* btn */}
           <div>
-            <button className='px-7 py-3 rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-4 hover:bg-[#F7A582] hover:text-white duration-500'>Appointment</button>
+            <button className='px-9 py-3 rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-4 hover:bg-[#F7A582] hover:text-white duration-500'>Appointment</button>
           </div>
         </div>
         {/* Quick Links */}
-        <div className='lg:ml-16'>
+        <div className='lg:ml-16 mt-8 lg:mt-0'>
           <h2 className='text-3xl font-bold'>Quick Links</h2>
           <p className='text-[#6C6B6B] mt-8 hover:underline cursor-pointer'>About Us</p>
           <p className='text-[#6C6B6B] my-2 hover:underline cursor-pointer'> Service</p>
