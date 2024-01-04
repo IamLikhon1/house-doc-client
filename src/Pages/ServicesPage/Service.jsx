@@ -7,8 +7,8 @@ function Service() {
       <div className="grid lg:grid-cols-2 gap-2 lg:gap-0">
 
         {/* image */}
-        <div className="mt-16 mx-3 lg:ml-5">
-          <img src={serviceBanner} alt="" />
+        <div className="mt-8 mx-3 lg:ml-5">
+          <img src={serviceBanner} className="lg:h-[1010px]" alt="" />
         </div>
 
         {/* react tab component */}
