@@ -54,7 +54,7 @@ function TestimonialSection() {
             >
 
                 {
-                    data.map(item => (
+                    data?.map(item => (
                         <SwiperSlide key={item.id}>
                             <SingleTestimonialSlider item={item} ></SingleTestimonialSlider>
                         </SwiperSlide>

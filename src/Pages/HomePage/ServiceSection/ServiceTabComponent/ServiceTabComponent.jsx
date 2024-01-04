@@ -1,6 +1,5 @@
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs"
 import SingleTabInformation from "../SingleTabInformation/SingleTabInformation"
-
 function ServiceTabComponent() {
     return (
         <div>
