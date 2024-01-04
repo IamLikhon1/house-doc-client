@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 
 
 // import required modules
-import { Navigation,Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import SingleTestimonialSlider from "./SingleTestimonialSlider";
 
 function TestimonialSection() {
@@ -30,12 +30,12 @@ function TestimonialSection() {
             <div className="lg:mx-10">
             <Swiper
                 slidesPerView={2}
-                navigation={true}
+               
                 autoplay={{
-                    delay: 2000,
+                    delay: 2500,
                     disableOnInteraction: false,
                 }}
-                modules={[Navigation,Autoplay]}
+                modules={[Autoplay]}
                 breakpoints={{
                     0: {
                         slidesPerView: 1,
@@ -48,7 +48,7 @@ function TestimonialSection() {
                     ,
                     840: {
                         slidesPerView: 2,
-                        spaceBetween: 30,
+                        spaceBetween: 20,
                     }
                 }}
             >
