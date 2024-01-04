@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom"
 import NavBar from "../Pages/HomePage/NavBar/NavBar"
 import Footer from "../Pages/HomePage/Footer/Footer"
+import { Toaster } from 'react-hot-toast';
 
 function Main() {
   // login page without header and footer
@@ -16,6 +17,7 @@ function Main() {
         < NavBar ></NavBar>
       }
       <Outlet></Outlet>
+      <Toaster />
       {
         noHeaderFooter ||
         <Footer></Footer>

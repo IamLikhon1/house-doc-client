@@ -3,7 +3,7 @@ import PlusSign from '../../assets/LoginPlusImage.png'
 import capful from '../../assets/capsul.png'
 function SignInAndLoginImage() {
     return (
-        <div className='bg-[#07332F] h-full pb-2'>
+        <div className='bg-[#07332F] h-full'>
             <div>
                 <img src={PlusSign} alt="" className='relative lg:left-80 w-[450px]' />
                 <img className='h-fit w-[550px] lg:w-[550px] relative lg:left-24 px-2' src={doctorImg} alt="" />

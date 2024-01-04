@@ -1,9 +1,16 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import SignInAndLoginImage from "../../SharedComponents/SignInAndLoginImage/SignInAndLoginImage";
 import SocialSignIn from "../../SharedComponents/SocialSignIn/SocialSignIn";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 function Login() {
+  const { userLogIn} = useContext(AuthContext)
+  const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/';
   const {
     register,
     handleSubmit,
@@ -13,8 +20,16 @@ function Login() {
   const onSubmit = (data) => {
     const email = data.email;
     const password = data.password;
-    reset();
-   console.log(email, password);
+    userLogIn(email, password)
+      .then(result => {
+        const signIn = result.user;
+        navigate(from,{replace:true})
+        toast.success(`${signIn?.displayName} You Login successfully`);
+        reset();
+      })
+      .catch(error => {
+        toast.error(error.message)
+      })
 
   };
   return (
