@@ -3,7 +3,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlinePhoneForwarded } from "react-icons/md";
 function InformationSection() {
     return (
-        <div className="max-w-7xl mx-auto my-20">
+        <div className="max-w-7xl mx-auto my-24">
             <div className="grid lg:grid-cols-3 gap-5 lg:gap-0 mx-2">
                 {/* opening hour */}
                 <div className="flex gap-5 bg-[#07332F] text-white h-[150px]  justify-center rounded-lg lg:mx-3">

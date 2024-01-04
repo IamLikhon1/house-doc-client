@@ -4,7 +4,7 @@ import serviceBanner from '../../assets/MsDoctor.png'
 function Service() {
   return (
     <div className="max-w-7xl mx-auto ">
-      <div className="grid lg:grid-cols-2 gap-2 lg:gap-0">
+      <div className="grid lg:grid-cols-2 gap-2 lg:gap-0 lg:mt-10">
 
         {/* image */}
         <div className="mt-8 mx-3 lg:ml-5">

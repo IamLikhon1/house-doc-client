@@ -15,7 +15,7 @@ function TestimonialSection() {
     const { isLoading, data } = useQuery({
         queryKey: ['testData'],
         queryFn: () =>
-            fetch('Test.json').then((res) =>
+            fetch('http://localhost:5000/getTestimonialData').then((res) =>
                 res.json()
             ),
     })
