@@ -13,7 +13,7 @@ import SingleTestimonialSlider from "./SingleTestimonialSlider";
 
 function TestimonialSection() {
     const { isLoading, data } = useQuery({
-        queryKey: ['testData'],
+        queryKey: ['testimonialData'],
         queryFn: () =>
             fetch('http://localhost:5000/getTestimonialData').then((res) =>
                 res.json()
