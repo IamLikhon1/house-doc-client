@@ -10,7 +10,7 @@ function Banner() {
                 <div className='text-white lg:pl-24 text-center lg:text-start'>
                     <h1 className='text-4xl lg:text-7xl font-medium'>Your Best Medical <br /> Help Center</h1>
                     <p className='lg:text-lg my-5 px-5 lg:px-0'>Lorem Ipsum is simply dummy text they are printing typesetting has been the industry’s standard.</p>
-                    <button className='px-6 py-3 mt-2 rounded-md bg-[#F7A582] font-semibold'>All Services</button>
+                   <Link to="/Services"> <button className='px-6 py-3 mt-2 rounded-md bg-[#F7A582] font-semibold'>All Services</button></Link>
                     {/* capfulImg show only large device */}
                     <div className='relative hidden lg:block left-64'>
                         <img className='absolute left-96' src={capfulImg} alt="" />

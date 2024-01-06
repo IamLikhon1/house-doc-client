@@ -1,7 +1,11 @@
+import SubBanner from "../../SharedComponents/SubBanner/SubBanner"
 
 function Service() {
   return (
-    <div>Service</div>
+    <div>
+      {/* sub banner */}
+      <SubBanner title="Service" subTitle="Services Page"/>
+    </div>
   )
 }
 

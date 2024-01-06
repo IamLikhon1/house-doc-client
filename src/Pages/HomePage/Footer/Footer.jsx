@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import footerLogo from '../../../assets/FooterLogo.png'
 function Footer() {
   return (
@@ -15,9 +16,9 @@ function Footer() {
           </div>
           <p className='text-start text-[#3B3A3A] mt-5 pl-2'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. has been since the printer took.</p>
           {/* btn */}
-          <div>
+         <Link to="/Appointment"> <div>
             <button className='px-9 py-3 rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-4 hover:bg-[#F7A582] hover:text-white duration-500'>Appointment</button>
-          </div>
+          </div></Link>
         </div>
         {/* Quick Links */}
         <div className='lg:ml-16 mt-8 lg:mt-0'>
