@@ -41,7 +41,7 @@ function DoctorsCard({ item }) {
                 </div>
                 {/* btn */}
                 <div className="mx-2">
-                   <Link to={_id}> <button className='w-full mr-10 py-3 rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-3 hover:bg-[#F7A582] hover:text-white duration-500'>View Profile</button></Link>
+                   <Link to={`/doctor/${_id}`}> <button className='w-full mr-10 py-3 rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-3 hover:bg-[#F7A582] hover:text-white duration-500'>View Profile</button></Link>
                     </div>
             </div>
         </div>

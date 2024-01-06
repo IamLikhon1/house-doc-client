@@ -1,17 +1,18 @@
-import { useQuery } from "@tanstack/react-query"
 import DoctorsCard from "../../../SharedComponents/DoctorsCard/DoctorsCard";
-import Loader from "../../../SharedComponents/Loader/Loader";
+import { useEffect, useState } from "react";
 
 function ExpertDoctorsSection() {
-    const { isLoading, data } = useQuery({
-        queryKey: ['doctorData'],
-        queryFn: () =>
-            fetch('http://localhost:5000/getDoctorsData').then((res) =>
-                res.json()
-            ),
-    })
-    if (isLoading) return <Loader/>
-    // console.log(data[0].star);
+    const [search,] = useState("");
+    const [acs, ] = useState(true);
+    const [allDoc, setAllDoc] = useState([]);
+    useEffect(() => {
+        fetch(
+            `http://localhost:5000/getDoctorsData?search=${search}&sort=${acs ? "asc" : "desc"
+            }`
+          )
+          .then((res) => res.json())
+          .then((data) => setAllDoc(data));
+      }, [search,acs]);
     return (
         <div className="max-w-7xl mx-auto lg:mt-36 mt-20">
             {/* title */}
@@ -22,7 +23,7 @@ function ExpertDoctorsSection() {
 
             <div className="grid lg:grid-cols-3 mx-2 lg:mx-0 lg:gap-10 mt-10">
                 {
-                    data?.slice(0, 3).map(item => (
+                    allDoc?.slice(0, 3).map(item => (
                         <DoctorsCard key={item._id} item={item} />
                     ))
                 }

@@ -17,6 +17,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import AuthProvider from './provider/AuthProvider';
+import SingleDoctorInfo from './Component/SingleDoctorInfo/SingleDoctorInfo';
 
 // Create a client
 const queryClient = new QueryClient()
@@ -48,6 +49,11 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register />
+      },
+      {
+        path:'/doctor/:id',
+        element:<SingleDoctorInfo/>,
+        loader:({params})=>fetch(`http://localhost:5000/doctor/${params.id}`)
       }
     ]
   },
