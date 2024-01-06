@@ -1,8 +1,9 @@
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
+import { TbCoin } from "react-icons/tb";
 
 function DoctorHeaderPart({ loader }) {
-    const { picture, name, location, degree, star, specializationOne, specializationTwo } = loader;
+    const { picture, name, location, degree, star, specializationOne, specializationTwo,fee } = loader;
     return (
         <div className="border px-8 py-8 mt-16 mx-2 rounded-lg bg-white">
             <div className="lg:flex gap-10 items-center">
@@ -23,7 +24,13 @@ function DoctorHeaderPart({ loader }) {
                         }
                         <span className="text-[#6C6B6B]"> (45) </span>
                     </div>
-
+                    {/* fee */}
+                    
+                    <div className="flex gap-3 items-center text-[#6C6B6B] mt-4">
+                        <TbCoin className="text-3xl" />
+                        <p className="text-lg">${fee}</p>
+                    </div>
+                    
                     {/* location */}
                     <div className="flex gap-3 items-center text-[#6C6B6B] ">
                         <CiLocationOn className="text-3xl" />

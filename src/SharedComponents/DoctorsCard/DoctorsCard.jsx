@@ -33,7 +33,7 @@ function DoctorsCard({ item }) {
                         <CiCalendar className="text-2xl" />
                         <p>Available On {available_day}</p>
                     </div>
-                    {/* Available */}
+                    {/* Fee */}
                     <div className="flex gap-3 items-center text-[#6C6B6B] mt-4">
                         <TbCoin className="text-2xl" />
                         <p>${fee}</p>
