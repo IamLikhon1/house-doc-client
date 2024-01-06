@@ -15,16 +15,7 @@ function Doctor() {
       .then((res) => res.json())
       .then((data) => setAllDoc(data));
   }, [acs, search]);
-  // const { isLoading, data, refetch } = useQuery({
-  //   queryKey: ['doctorData'],
-  //   queryFn: () =>
-  //     fetch(`http://localhost:5000/getDoctorsData?search=${search}&sort=${acs ? "asc" : "desc"
-  //       }`).then((res) =>
-  //         res.json()
-  //       ),
-  // })
-  // if (isLoading) return <Loader />
-
+  
   const handleSearch = () => {
     setSearch(searchRef.current.value);
 
@@ -38,12 +29,12 @@ function Doctor() {
         <div className="lg:flex items-center justify-between">
           {/* search */}
           <div className="flex mt-5">
-            <input type="text" ref={searchRef} className="mt-5 ml-2 lg:ml-0 w-fit px-7 lg:px-32 py-3 rounded-lg border-2 focus:outline-none bg-[#F3F3F3]" placeholder="Search by Doctor Name" />
-            <button onClick={handleSearch} className='px-5  lg:px-12 lg:py-2 rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-4 ml-3 hover:bg-[#F7A582] hover:text-white duration-500'>Search</button>
+            <input type="text" ref={searchRef} className="mt-5 ml-2 lg:ml-0 w-fit px-10 lg:px-44 py-4 rounded-lg border-2 focus:outline-none bg-[#F3F3F3]" placeholder="Search by Doctor Name" />
+            <button onClick={handleSearch} className='px-5 lg:px-14  rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-4 lg:mt-5 ml-3 hover:bg-[#F7A582] hover:text-white duration-500'>Search</button>
           </div>
           {/* sort */}
           <div>
-            <button className="relative left-20 lg:left-0  px-8 py-3 lg:px-12 lg:py-3 rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-7 ml-3 hover:bg-[#F7A582] hover:text-white duration-500" onClick={() => setAcs(!acs)}>
+            <button className="relative left-20 lg:left-0  px-8 py-3 lg:px-10 lg:py-4 rounded-md border-2 border-[#07332F] text-[#07332F] font-semibold mt-7 ml-3 hover:bg-[#07332F] hover:text-white duration-500" onClick={() => setAcs(!acs)}>
               {acs ? "Fee: Low to High" : "Fee: High to Low"}
             </button>
           </div>

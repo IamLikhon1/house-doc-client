@@ -3,9 +3,9 @@ import BigCapful from '../../assets/SubBannerOne.png'
 import smallCapful from '../../assets/capsul.png'
 function SubBanner({ title, subTitle }) {
     return (
-        <div className='bg-[#07332F] h-[400px]'>
-            <div className='text-[#F3F3F3] pt-40 text-center lg:text-start lg:pl-36'>
-                <div className=' lg:flex lg:justify-between'>
+        <div className='bg-[#07332F] h-[350px]'>
+            <div className='text-[#F3F3F3] pt-32 text-center lg:text-start lg:pl-36'>
+                <div className='lg:flex lg:justify-between'>
                     <div>
                         <p><Link to='/'>Home /</Link>      <span className='font-semibold'>{title}</span></p>
                         <h2 className='text-5xl mt-2'>{subTitle}</h2>
