@@ -16,7 +16,7 @@ function DoctorLowerPart({ loader }) {
                         <DoctorOverview loader={loader} />
                     </TabPanel>
                     <TabPanel className="pl-4">
-                        <DoctorForm />
+                        <DoctorForm loader={loader} />
                     </TabPanel>
                 </Tabs>
             </div>
