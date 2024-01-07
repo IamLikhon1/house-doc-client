@@ -5,7 +5,7 @@ import { AuthContext } from "../../../../provider/AuthProvider";
 import DoctorShowData from "./DocotorShowData/DoctorShowData";
 
 function DoctorForm({ loader }) {
-  const {user}=useContext(AuthContext)
+  const { user } = useContext(AuthContext)
   const { name } = loader;
   const {
     register,
@@ -18,19 +18,19 @@ function DoctorForm({ loader }) {
     const email = data.email;
     const review = data.review;
     const allInfo = { name, email, review }
-    fetch('http://localhost:5000/postReview',{
+    fetch('http://localhost:5000/postReview', {
       method: 'POST',
-      headers:{
+      headers: {
         'content-type': 'application/json',
       },
-      body:JSON.stringify(allInfo)
+      body: JSON.stringify(allInfo)
     })
-    .then(res=>res.json())
-    .then(data=>{
-      if(data.insertedId){
-        toast.success('Your review has posted successfully')
-      }
-    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.insertedId) {
+          toast.success('Your review has posted successfully')
+        }
+      })
     reset()
   };
   return (
@@ -41,7 +41,7 @@ function DoctorForm({ loader }) {
           <h2 className="text-2xl font-bold">Reviews</h2>
           {/* show review data */}
           <div>
-            <DoctorShowData/>
+            <DoctorShowData />
           </div>
         </div>
         {/* Review Form */}
@@ -60,7 +60,7 @@ function DoctorForm({ loader }) {
 
             {/* Email */}
             <label htmlFor="Email Address" className="font-semibold ">Email Address *</label> <br />
-            <input {...register("email", { required: true })} type="text" name="email" defaultValue={user?.email} className=" lg:ml-1 mb-5 w-full px-5 py-3  outline-none  border-b-2 border-b-[#646672]"readOnly
+            <input {...register("email", { required: true })} type="text" name="email" defaultValue={user?.email} className=" lg:ml-1 mb-5 w-full px-5 py-3  outline-none  border-b-2 border-b-[#646672]" readOnly
             />
 
             <br />

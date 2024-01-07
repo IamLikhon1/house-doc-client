@@ -1,10 +1,13 @@
 import { FaStar } from "react-icons/fa";
 import { CiCalendar, CiLocationOn } from "react-icons/ci";
 import { TbCoin } from "react-icons/tb";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 function DoctorsCard({ item }) {
-    const { name, picture, degree, available_day, location, fee, star,_id } = item;
+    const { user } = useContext(AuthContext)
+    const { name, picture, degree, available_day, location, fee, star, _id } = item;
     return (
         <div className="mt-5 rounded-lg border-2 pt-4 cursor-pointer hover:shadow-md duration-300 h-[550px]">
             <div>
@@ -16,8 +19,8 @@ function DoctorsCard({ item }) {
                     {/* icon star */}
                     <div className="flex text-[#F2871D] text-xl mt-4 gap-1">
                         {
-                            star.map((one,index) => (
-                                <p key={index+1}><FaStar /></p>
+                            star.map((one, index) => (
+                                <p key={index + 1}><FaStar /></p>
                             ))
                         }
                     </div>
@@ -40,9 +43,9 @@ function DoctorsCard({ item }) {
                     </div>
                 </div>
                 {/* btn */}
-                <div className="mx-2">
-                   <Link to={`/doctor/${_id}`}> <button className='w-full mr-10 py-3 rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-3 hover:bg-[#F7A582] hover:text-white duration-500'>View Profile</button></Link>
-                    </div>
+                {user ? <div className="mx-2">
+                    <Link to={`/doctor/${_id}`}> <button className='w-full mr-10 py-3 rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-3 hover:bg-[#F7A582] hover:text-white duration-500'>View Profile</button></Link>
+                </div> : <Link to='/login'><button className='w-full mr-10 py-3 rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-3 hover:bg-[#F7A582] hover:text-white duration-500'>View Profile</button></Link>}
             </div>
         </div>
     )

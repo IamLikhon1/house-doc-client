@@ -9,7 +9,7 @@ import DoctorShowDataDelete from "./DoctorShowDataDelete/DoctorShowDataDelete";
 function DoctorShowData() {
   const { user } = useContext(AuthContext);
   const { isLoading, data, refetch } = useQuery({
-    queryKey: ['getReview data'],
+    queryKey: ['getReview'],
     queryFn: () =>
       fetch('http://localhost:5000/getReview').then((res) =>
         res.json()
@@ -25,22 +25,24 @@ function DoctorShowData() {
           data.map(item => (
             <div key={item._id}>
 
-              <div className="border-2 rounded-lg py-4 cursor-pointer hover:shadow-md duration-300 group">
+              <div className="border-2 rounded-lg py-4 cursor-pointer hover:shadow-md duration-300 group mt-3">
                 <h2 className="px-5 font-bold">{item.name}</h2>
                 <p className="px-5 mt-2 mb-1">{item.review}</p>
               </div>
 
               <div className="relative bottom-5 right-3">
-                {user ? <img src={user.photoURL} className="w-[12%] h-[12%]  lg:w-[10%] lg:h-[10%] rounded-full" alt="" /> : <img src={unknownAvatar} className=" w-[12%] h-[12%] lg:w-[10%] lg:h-[10%] relative bottom- rounded-full" alt="" />}
+
+                {/* {src={user?.photoURL || defaultImg}} */}
+                 <img src={user?.photoURL || unknownAvatar} className="w-[12%] h-[12%]  lg:w-[10%] lg:h-[10%] rounded-full" alt="" />
               </div>
               <div >
                 <div className="relative">
                   <div
                     className="cursor-pointer"
                   >
-                    <BsThreeDots onClick={() => document.getElementById('my_modal_1').showModal()} className="absolute bottom-11 right-4 lg:bottom-14 text-3xl lg:text-4xl font-bold" />
+                     <BsThreeDots onClick={() => document.getElementById('my_modal_1').showModal()} className="absolute bottom-11 right-4 lg:bottom-14 text-3xl lg:text-4xl font-bold" />
                   </div>
-                 <DoctorShowDataDelete/>
+                  <DoctorShowDataDelete refetch={refetch} item={item} />
                 </div>
               </div>
 

@@ -5,12 +5,14 @@ import SocialSignIn from "../../SharedComponents/SocialSignIn/SocialSignIn";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
+import ShowDataOnTop from "../../SharedComponents/ShowDataOnTop/ShowDataOnTop";
 
 function Login() {
   const { userLogIn} = useContext(AuthContext)
   const navigate = useNavigate()
   const location = useLocation()
   const from = location.state?.from?.pathname || '/';
+  ShowDataOnTop()
   const {
     register,
     handleSubmit,
