@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { AuthContext } from "../../../../provider/AuthProvider";
+import DoctorShowData from "./DocotorShowData/DoctorShowData";
 
 function DoctorForm({ loader }) {
+  const {user}=useContext(AuthContext)
   const { name } = loader;
   const {
     register,
@@ -13,20 +18,30 @@ function DoctorForm({ loader }) {
     const email = data.email;
     const review = data.review;
     const allInfo = { name, email, review }
+    fetch('http://localhost:5000/postReview',{
+      method: 'POST',
+      headers:{
+        'content-type': 'application/json',
+      },
+      body:JSON.stringify(allInfo)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      if(data.insertedId){
+        toast.success('Your review has posted successfully')
+      }
+    })
     reset()
-    console.log(allInfo);
-
-
   };
   return (
     <div className="mt-8 text-[#3B3A3A]">
-      <div className="grid lg:grid-cols-2 gap-5">
+      <div className="grid lg:grid-cols-2 gap-5 lg:gap-10">
         {/* Reviews show */}
         <div>
           <h2 className="text-2xl font-bold">Reviews</h2>
           {/* show review data */}
           <div>
-
+            <DoctorShowData/>
           </div>
         </div>
         {/* Review Form */}
@@ -38,14 +53,14 @@ function DoctorForm({ loader }) {
 
             {/* name */}
             <label htmlFor="Name" className="font-semibold ">Name *</label> <br />
-            <input {...register("name", { required: true })} type="text" name="name" className="mt-2 lg:ml-1 mb-5 w-full px-5 py-3  outline-none  border-b-2 border-b-[#646672]"
+            <input {...register("name", { required: true })} type="text" name="name" className="lg:ml-1 mb-5 w-full px-5 py-3  outline-none  border-b-2 border-b-[#646672]"
             />
 
             <br />
 
             {/* Email */}
             <label htmlFor="Email Address" className="font-semibold ">Email Address *</label> <br />
-            <input {...register("email", { required: true })} type="text" name="email" className="mt-2 lg:ml-1 mb-5 w-full px-5 py-3  outline-none  border-b-2 border-b-[#646672]"
+            <input {...register("email", { required: true })} type="text" name="email" defaultValue={user?.email} className=" lg:ml-1 mb-5 w-full px-5 py-3  outline-none  border-b-2 border-b-[#646672]"readOnly
             />
 
             <br />
@@ -55,7 +70,7 @@ function DoctorForm({ loader }) {
               <span>Your Review * </span>
 
             </label>
-            <textarea {...register("review", { required: true })} type="text" name="review" className="mt-2 lg:ml-1 mb-5 w-full px-5 py-3   outline-none  border-b-2 border-b-[#646672]" />
+            <textarea {...register("review", { required: true })} type="text" name="review" className=" lg:ml-1 mb-4 w-full px-5 py-3   outline-none  border-b-2 border-b-[#646672]" />
             <p> <input type="checkbox" /> I agree that my submitted data is being collected and stored. *</p>
             {/* button */}
             <div>

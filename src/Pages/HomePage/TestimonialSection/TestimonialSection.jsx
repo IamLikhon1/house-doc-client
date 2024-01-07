@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay } from 'swiper/modules';
 import SingleTestimonialSlider from "./SingleTestimonialSlider";
+import Loader from "../../../SharedComponents/Loader/Loader";
 
 function TestimonialSection() {
     const { isLoading, data } = useQuery({
@@ -19,7 +20,7 @@ function TestimonialSection() {
                 res.json()
             ),
     })
-    if (isLoading) return 'Loading...'
+    if (isLoading) return <Loader/>
     // console.log(data);
     return (
         <div className="max-w-7xl mx-auto">

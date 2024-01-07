@@ -18,7 +18,7 @@ function DoctorHeaderPart({ loader }) {
 
                     <div className="flex text-[#F2871D] text-xl gap-1 items-center">
                         {
-                            star.map((index) => (
+                            star?.map((index) => (
                                 <p key={index + 1}><FaStar /> </p>
                             ))
                         }
