@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { AuthContext } from "../../../../provider/AuthProvider";
 import DoctorShowData from "./DocotorShowData/DoctorShowData";
 
-function DoctorForm({ loader }) {
+function DoctorForm({ loader,data }) {
   const { user } = useContext(AuthContext)
   const { name } = loader;
   const {
@@ -39,6 +39,7 @@ function DoctorForm({ loader }) {
         {/* Reviews show */}
         <div>
           <h2 className="text-2xl font-bold">Reviews</h2>
+         { data.length? "":<p className="mt-5 text-lg text-[#646672]">There are no reviews yet.</p>}
           {/* show review data */}
           <div>
             <DoctorShowData />
