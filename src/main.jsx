@@ -54,7 +54,8 @@ const router = createBrowserRouter([
         path:'/doctor/:id',
         element:<SingleDoctorInfo/>,
         loader:({params})=>fetch(`http://localhost:5000/doctor/${params.id}`)
-      }
+      },
+      
     ]
   },
 ]);
