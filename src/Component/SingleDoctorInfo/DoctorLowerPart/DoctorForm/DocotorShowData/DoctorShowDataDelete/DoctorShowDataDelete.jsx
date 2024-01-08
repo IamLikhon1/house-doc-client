@@ -36,6 +36,7 @@ function DoctorShowDataDelete({ item, refetch }) {
                     <input onChange={handleInputChange} type="text" name="text" className="mt-4 lg:ml-1 mb-4  px-5 py-3 rounded-md border-2 focus:outline-none bg-[#F3F3F3] lg:w-[80%]" placeholder="Type 'Delete' word"
                     />
 
+
                     <button  disabled={inputUser !== 'Delete'}  onClick={() => handleDelete(_id)} className="px-10 py-4 rounded-lg border-2 bg-[#F7A582] text-white cursor-pointer" >Delete This Review</button>
                 </div>
             </dialog>
