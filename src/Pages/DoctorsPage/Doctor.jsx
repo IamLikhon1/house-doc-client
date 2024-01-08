@@ -15,7 +15,7 @@ function Doctor() {
       .then((res) => res.json())
       .then((data) => setAllDoc(data));
   }, [acs, search]);
-  
+
   const handleSearch = () => {
     setSearch(searchRef.current.value);
 

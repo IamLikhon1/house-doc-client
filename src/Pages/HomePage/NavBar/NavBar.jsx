@@ -10,11 +10,11 @@ function NavBar() {
 
   const handleLogOut = () => {
     logOutUser()
-    .then(() => { })
-    
-    .catch(error => {
-      console.log(error)
-    })
+      .then(() => { })
+
+      .catch(error => {
+        console.log(error)
+      })
     toast.success('You Logout successfully')
   }
   const toggleNavbar = () => {
@@ -63,13 +63,13 @@ function NavBar() {
                 >
                   Services
                 </Link>
-                {user?<Link
+                {user ? <Link
                   // onClick={() => setProgress(100)}
                   onClick={handleLogOut}
                   className="text-white px-3 py-2 rounded-md text-lg font-semibold bg-[#F7A582] duration-500 cursor-pointer"
                 >
                   Log Out
-                </Link>:<Link
+                </Link> : <Link
                   // onClick={() => setProgress(100)}
                   to='/login'
                   className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
@@ -113,35 +113,36 @@ function NavBar() {
       </div>
       {/* smaller device */}
       {isOpen && (
-        <div className="lg:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="lg:hidden mb-24 lg:mb-0">
+          <div className="px-2 pt-2 pb-3 space-y-2 sm:px-3">
             <Link
               to="/"
-              className="text-white block px-3 py-2 rounded-md text-base font-medium "
+              className="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500 "
             >
               Home
             </Link>
             <Link
               to="/Appointment"
-              className="text-white  block px-3 py-2 rounded-md text-base font-medium"
+              className="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
             >
               Appointment
             </Link>
             <Link
               to="/Doctors"
-              className="text-white  block px-3 py-2 rounded-md text-base font-medium"
+              className="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
             >
               Doctors
             </Link>
             <Link
+              // onClick={() => setProgress(100)}
               to='/Services'
-              className="text-white  block px-3 py-2 rounded-md text-base font-medium"
+              className="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
             >
               Services
             </Link>
             <Link
               to='/login'
-              className="text-white  block px-3 py-2 rounded-md text-base font-medium"
+              className="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
             >
               Login
             </Link>
