@@ -39,6 +39,7 @@ function Service() {
           </div>
 
         </div>
+        <h2 className="text-4xl text-center my-10 font-semibold text-[#3B3A3A]">Find Your Best Service For Better Life</h2>
         <div className="grid lg:grid-cols-3 gap-5 lg:gap-8 mt-10 mx-2 lg:mx-0">
           {
             allDoc?.map(item => (

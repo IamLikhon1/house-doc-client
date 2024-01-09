@@ -24,7 +24,7 @@ function NavBar() {
     <nav className="bg-[#07332F] p-1 container mx-auto">
       {/* <TopLoaderAnimation progress={progress}setProgress={setProgress}/> */}
       <div className="mx-auto sm:pl-6 lg:pl-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             {/* logo */}
             <div>
@@ -34,7 +34,7 @@ function NavBar() {
             </div>
 
             <div className="hidden lg:block lg:ml-96">
-              <div className="space-x-6 lg:ml-60">
+              <div className="space-x-6 lg:ml-72">
                 <Link
                   // onClick={() => setProgress(100)}
                   to="/"
@@ -63,19 +63,37 @@ function NavBar() {
                 >
                   Services
                 </Link>
-                {user ? <Link
-                  // onClick={() => setProgress(100)}
-                  onClick={handleLogOut}
-                  className="text-white px-3 py-2 rounded-md text-lg font-semibold bg-[#F7A582] duration-500 cursor-pointer"
-                >
-                  Log Out
-                </Link> : <Link
-                  // onClick={() => setProgress(100)}
-                  to='/login'
-                  className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
-                >
-                  Login
-                </Link>}
+                {/* profile */}
+
+                {
+                  user ? <div className="cursor-pointer dropdown dropdown-end dropdown-hover">
+                     { user?.photoURL?<img src={user?.photoURL} className="w-[55%] h-[55%] rounded-full relative top-4" alt="" /> : <p className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500">Profile</p>}
+                      
+                    <ul tabIndex={0} className="mt-3 dropdown-content z-10 menu p-2 shadow bg-base-200 rounded-box w-52 text-black">
+                      <li className="flex items-center justify-center my-2 text-base font-semibold hover:bg-gray-300 py-2 rounded-md">DashBoard</li>
+                      <li className="flex items-center justify-center">
+
+                        <button
+                          // onClick={() => setProgress(100)}
+                          onClick={handleLogOut}
+                          className="text-white px-10 py-2 rounded-lg text-lg font-semibold bg-[#F7A582] hover:bg-[#F7A582]  duration-500 cursor-pointer"
+                        >
+                          Log Out
+                        </button>
+
+                      </li>
+                    </ul>
+                  </div> : <Link
+                    // onClick={() => setProgress(100)}
+                    to='/login'
+                    className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
+                  >
+                    Login
+                  </Link>
+                }
+                {/* profile */}
+
+
               </div>
 
             </div>
@@ -113,7 +131,7 @@ function NavBar() {
       </div>
       {/* smaller device */}
       {isOpen && (
-        <div className="lg:hidden mb-24 lg:mb-0">
+        <div className="lg:hidden mb-28 lg:mb-0">
           <div className="px-2 pt-2 pb-3 space-y-2 sm:px-3">
             <Link
               to="/"
@@ -140,12 +158,14 @@ function NavBar() {
             >
               Services
             </Link>
-            <Link
-              to='/login'
-              className="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
-            >
+            {user ? <button
+              onClick={handleLogOut}
+              className="text-white block px-3 py-2 rounded-md text-base font-medium bg-[#F7A582]" >Log Out</button> : <Link
+                to='/login'
+                className="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
+              >
               Login
-            </Link>
+            </Link>}
           </div>
         </div>
       )}

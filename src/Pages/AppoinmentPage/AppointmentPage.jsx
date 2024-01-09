@@ -50,7 +50,7 @@ function AppointmentPage() {
         </div>
 
 
-        <h2 className="text-4xl text-[#3B3A3A] font-bold mt-16 text-center">Please select a slots for service.</h2>
+        <h2 className="text-4xl text-[#3B3A3A] font-bold mt-16 text-center">Please select a our available slots for service.</h2>
 
         <div className="mt-10 grid lg:grid-cols-3 gap-8 mx-2 lg:mx-0">
           {

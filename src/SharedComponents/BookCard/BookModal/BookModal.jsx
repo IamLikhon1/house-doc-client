@@ -38,6 +38,7 @@ const BookModal = () => {
                     {/* if there is a button in form, it will close the modal */}
                     <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
+                <h2 className="text-xl text-[#07332F] my-3 font-semibold">Book For Appointment</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
 
                     {/* name */}
