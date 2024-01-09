@@ -70,7 +70,7 @@ function NavBar() {
                      { user?.photoURL?<img src={user?.photoURL} className="w-[55%] h-[55%] rounded-full relative top-4" alt="" /> : <p className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500">Profile</p>}
                       
                     <ul tabIndex={0} className="mt-3 dropdown-content z-10 menu p-2 shadow bg-base-200 rounded-box w-52 text-black">
-                      <li className="flex items-center justify-center my-2 text-base font-semibold hover:bg-gray-300 py-2 rounded-md">DashBoard</li>
+                     <Link to='/dashboard/overview'> <li className="flex items-center justify-center my-2 text-base font-semibold hover:bg-gray-300 py-2 rounded-md">DashBoard</li></Link>
                       <li className="flex items-center justify-center">
 
                         <button

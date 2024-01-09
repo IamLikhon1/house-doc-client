@@ -18,6 +18,12 @@ import {
 } from '@tanstack/react-query'
 import AuthProvider from './provider/AuthProvider';
 import SingleDoctorInfo from './Component/SingleDoctorInfo/SingleDoctorInfo';
+import DashBoard from './Layout/DashBoard';
+import AllDoctorRoute from './Pages/DashBoardPage/AllDoctorRoute/AllDoctorRoute';
+import AllServicesRoute from './Pages/DashBoardPage/AllServicesRoute/AllServicesRoute';
+import AddDoctorsRoute from './Pages/DashBoardPage/AddDoctorsRoute/AddDoctorsRoute';
+import AddServicesRoute from './Pages/DashBoardPage/AddServicesRoute/AddServicesRoute';
+import Overview from './Pages/DashBoardPage/Overview/Overview';
 
 // Create a client
 const queryClient = new QueryClient()
@@ -58,6 +64,34 @@ const router = createBrowserRouter([
       
     ]
   },
+
+  {
+    path: '/dashboard',
+    element: <DashBoard/>,
+    children:[
+      {
+        path:'overview',
+        element: <Overview/>
+      },
+      {
+        path:'allDoctor',
+        element: <AllDoctorRoute/>
+      },
+      {
+        path:'allServices',
+        element: <AllServicesRoute/>
+      },
+      {
+        path:'addDoctors',
+        element: <AddDoctorsRoute/>
+      },
+      {
+        path:'addServices',
+        element: <AddServicesRoute/>
+      },
+
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
