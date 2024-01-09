@@ -4,7 +4,7 @@ import Loader from "../../../SharedComponents/Loader/Loader";
 
 const GetAllAppointmentData = () => {
     const { isLoading, data } = useQuery({
-        queryKey: ['testimonialData'],
+        queryKey: ['getUserSentData'],
         queryFn: () =>
             fetch('http://localhost:5000/getAllUserSentData').then((res) =>
                 res.json()
