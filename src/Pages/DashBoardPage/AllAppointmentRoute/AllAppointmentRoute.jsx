@@ -46,7 +46,7 @@ const AllAppointmentRoute = () => {
     return (
         <div className="text-[#383838]">
             <div>
-                <h2 className="text-5xl text-center mt-5 font-semibold ">All Service lits</h2>
+                <h2 className="text-5xl text-center mt-5 font-semibold ">All Appointment lits</h2>
                 <div className="mx-2 my-10">
                     <div className="overflow-x-auto">
                         <table className="table text-center font-semibold">
