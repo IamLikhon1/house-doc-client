@@ -47,9 +47,6 @@ const AllDoctorRoute = () => {
         })
 
     }
-
-
-
     return (
         <div className="text-[#383838]">
             <div>
