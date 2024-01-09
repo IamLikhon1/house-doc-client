@@ -46,7 +46,7 @@ const AllServicesRoute = () => {
         })
 
     }
-    console.log(allDoc);
+    // console.log(allDoc);
 
     return (
         <div className="text-[#383838]">

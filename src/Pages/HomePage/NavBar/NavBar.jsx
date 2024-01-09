@@ -20,6 +20,7 @@ function NavBar() {
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <nav className="bg-[#07332F] p-1 container mx-auto">
       {/* <TopLoaderAnimation progress={progress}setProgress={setProgress}/> */}
@@ -66,23 +67,32 @@ function NavBar() {
                 {/* profile */}
 
                 {
-                  user ? <div className="cursor-pointer dropdown dropdown-end dropdown-hover">
-                     { user?.photoURL?<img src={user?.photoURL} className="w-[55%] h-[55%] rounded-full relative top-4" alt="" /> : <p className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500">Profile</p>}
-                      
-                    <ul tabIndex={0} className="mt-3 dropdown-content z-10 menu p-2 shadow bg-base-200 rounded-box w-52 text-black">
-                     <Link to='/dashboard/overview'> <li className="flex items-center justify-center my-2 text-base font-semibold hover:bg-gray-300 py-2 rounded-md">DashBoard</li></Link>
+                  user ? <div className="cursor-pointer dropdown dropdown-hover dropdown-end">
+                    {user?.photoURL ? <img src={user?.photoURL} className="w-[50%] h-[50%] rounded-full relative top-4" alt="" /> : <button
+                      // onClick={() => setProgress(100)}
+                      onClick={handleLogOut}
+                      className="text-white px-10 py-2 rounded-lg text-lg font-semibold bg-[#F7A582] hover:bg-[#F7A582]  duration-500 cursor-pointer"
+                    >
+                      Log Out
+                    </button>}
+
+                    {user.email == import.meta.env.VITE_Admin ? <ul tabIndex={0} className="mt-3 dropdown-content z-10 menu p-2 shadow bg-base-200 rounded-box w-52 text-black">
+
+                      <Link to='/dashboard/overview'> <li className="flex items-center justify-center my-2 text-base font-semibold hover:bg-gray-300 py-2 rounded-md">DashBoard</li>
+
+                      </Link>
                       <li className="flex items-center justify-center">
 
                         <button
                           // onClick={() => setProgress(100)}
                           onClick={handleLogOut}
-                          className="text-white px-10 py-2 rounded-lg text-lg font-semibold bg-[#F7A582] hover:bg-[#F7A582]  duration-500 cursor-pointer"
+                          className="text-white px-10 py-2 rounded-lg text-lg font-semibold bg-[#07332F] hover:bg-[#07332F]  duration-500 cursor-pointer"
                         >
                           Log Out
                         </button>
 
                       </li>
-                    </ul>
+                    </ul> : " "}
                   </div> : <Link
                     // onClick={() => setProgress(100)}
                     to='/login'
