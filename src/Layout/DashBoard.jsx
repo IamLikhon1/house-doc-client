@@ -16,11 +16,12 @@ const DashBoard = () => {
                     {/* Sidebar content here */}
                     <li><Link className=" mt-8 px-3 py-2 rounded-md text-lg font-semibold"   to='/dashboard/overview'>Dashboard Overview</Link></li>
 
-                    <li><Link className=" mt-5 px-3 py-2 rounded-md text-lg font-semibold"   to='/dashboard/allDoctor'>All Doctor</Link></li>
+                    <li><Link className=" mt-5 px-3 py-2 rounded-md text-lg font-semibold"   to='/dashboard/allDoctor'>All Doctors</Link></li>
                     <li><Link className=" mt-5 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/allServices'>All Services</Link></li>
+                    <li><Link className=" mt-5 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/allAppointment'>All Appointment</Link></li>
                     <li><Link className=" mt-5 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/addDoctors'>Add Doctor</Link></li>
 
-                    <li><Link className=" mt-5 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/addServices'>Add Services</Link></li>
+                    <li><Link className=" mt-5 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/addServices'>Add Service</Link></li>
                     <div className="divider"></div>
                     <li><Link className=" mt-5 px-3 py-2 rounded-md text-lg font-semibold" to='/'><FaHome></FaHome> Home</Link></li>
                 </ul>

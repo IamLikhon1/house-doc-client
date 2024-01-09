@@ -24,6 +24,7 @@ import AllServicesRoute from './Pages/DashBoardPage/AllServicesRoute/AllServices
 import AddDoctorsRoute from './Pages/DashBoardPage/AddDoctorsRoute/AddDoctorsRoute';
 import AddServicesRoute from './Pages/DashBoardPage/AddServicesRoute/AddServicesRoute';
 import Overview from './Pages/DashBoardPage/Overview/Overview';
+import AllAppointmentRoute from './Pages/DashBoardPage/AllAppointmentRoute/AllAppointmentRoute';
 
 // Create a client
 const queryClient = new QueryClient()
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
       {
         path:'allServices',
         element: <AllServicesRoute/>
+      },
+      {
+        path:'allAppointment',
+        element: <AllAppointmentRoute/>
       },
       {
         path:'addDoctors',
