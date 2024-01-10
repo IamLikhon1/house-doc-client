@@ -50,7 +50,7 @@ const AllDoctorRoute = () => {
     return (
         <div className="text-[#383838]">
             <div>
-                <h2 className="text-5xl text-center mt-5 font-semibold ">All Doctor lits</h2>
+                <h2 className="text-5xl text-center mt-5 font-semibold mt-8 lg:mt-0 ">All Doctor lits</h2>
                 <div className="mx-2 my-10">
                     <div className="overflow-x-auto">
                         <table className="table text-center font-semibold">
@@ -71,7 +71,7 @@ const AllDoctorRoute = () => {
                             <tbody>
 
                                 {
-                                    allDoc.map((item, index) => (
+                                    allDoc?.map((item, index) => (
                                         <tr key={item._id}>
                                             <td>{index + 1}</td>
                                             <td>{item.name}</td>

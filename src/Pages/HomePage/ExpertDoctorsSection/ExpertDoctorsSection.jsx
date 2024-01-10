@@ -13,6 +13,9 @@ function ExpertDoctorsSection() {
           .then((res) => res.json())
           .then((data) => setAllDoc(data));
       }, [search,acs]);
+
+      const topRating=allDoc.filter(rate=>rate.star?.length===5)
+    //   console.log(topRating);
     return (
         <div className="max-w-7xl mx-auto lg:mt-36 mt-20">
             {/* title */}
@@ -23,7 +26,7 @@ function ExpertDoctorsSection() {
 
             <div className="grid lg:grid-cols-3 mx-2 lg:mx-0 lg:gap-10 mt-10">
                 {
-                    allDoc?.slice(0, 3).map(item => (
+                    topRating?.slice(0, 3).map(item => (
                         <DoctorsCard key={item._id} item={item} />
                     ))
                 }

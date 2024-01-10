@@ -6,7 +6,7 @@ import GetAllAppointmentData from "./GetAllAppointmentData";
 const Overview = () => {
     return (
         <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-3 lg:mt-20 lg:mx-5">
+            <div className="grid lg:grid-cols-3 lg:mt-20 lg:mx-5 mt-8">
                 {/* doctor card */}
                 <GetAllDoctorData />
 

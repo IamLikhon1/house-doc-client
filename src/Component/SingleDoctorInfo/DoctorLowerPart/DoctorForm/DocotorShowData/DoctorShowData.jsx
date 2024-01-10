@@ -22,7 +22,7 @@ function DoctorShowData() {
       <div>
 
         {
-          data.map(item => (
+          data?.map(item => (
             <div key={item._id}>
 
               <div className="border-2 rounded-lg py-4 cursor-pointer hover:shadow-md duration-300 group mt-3">

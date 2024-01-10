@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const AddDoctorsRoute = () => {
     const {
@@ -19,17 +20,32 @@ const AddDoctorsRoute = () => {
         const about_me = data.about_me;
         const picture = data.picture;
         const allDataStore = { name, degree, location, available_day, fee, experience, specializationOne, specializationTwo, about_me, picture };
-        reset();
-        console.log(allDataStore);
-
-
+        fetch('http://localhost:5000/postDoctorData', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(allDataStore)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Successfully',
+                        text: 'You ADD A New Doctor',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                      })
+                }
+            })
+        reset()
 
     };
     return (
-        <div className="">
-            <h2 className="text-3xl font-semibold text-center lg:text-start mb-5">Add A New Doctor</h2>
+        <div>
+            <h2 className="text-3xl font-semibold text-center lg:text-start mb-5 mt-8 lg:mt-0">Add A New Doctor</h2>
 
-            <div className="">
+            <div>
                 {/* form */}
                 <form onSubmit={handleSubmit(onSubmit)}>
 

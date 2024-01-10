@@ -19,7 +19,7 @@ function DoctorsCard({ item }) {
                     {/* icon star */}
                     <div className="flex text-[#F2871D] text-xl mt-4 gap-1">
                         {
-                            star.map((one, index) => (
+                            star?.map((one, index) => (
                                 <p key={index + 1}><FaStar /></p>
                             ))
                         }
