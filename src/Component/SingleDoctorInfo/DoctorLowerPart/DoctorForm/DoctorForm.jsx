@@ -18,7 +18,7 @@ function DoctorForm({ loader,data }) {
     const email = data.email;
     const review = data.review;
     const allInfo = { name, email, review }
-    fetch('http://localhost:5000/postReview', {
+    fetch('https://house-doc-server-production.up.railway.app/postReview', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

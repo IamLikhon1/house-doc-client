@@ -6,7 +6,7 @@ const AllAppointmentRoute = () => {
     const { isLoading, data, refetch } = useQuery({
         queryKey: ['testimonialData'],
         queryFn: () =>
-            fetch('http://localhost:5000/getAllUserSentData').then((res) =>
+            fetch('https://house-doc-server-production.up.railway.app/getAllUserSentData').then((res) =>
                 res.json()
             ),
     })
@@ -24,7 +24,7 @@ const AllAppointmentRoute = () => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/deleteUserSentData/${id}`, {
+                fetch(`https://house-doc-server-production.up.railway.app/deleteUserSentData/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

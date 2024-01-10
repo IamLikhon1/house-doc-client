@@ -6,7 +6,7 @@ const GetAllAppointmentData = () => {
     const { isLoading, data } = useQuery({
         queryKey: ['getUserSentData'],
         queryFn: () =>
-            fetch('http://localhost:5000/getAllUserSentData').then((res) =>
+            fetch('https://house-doc-server-production.up.railway.app/getAllUserSentData').then((res) =>
                 res.json()
             ),
     })

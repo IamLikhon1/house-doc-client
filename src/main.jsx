@@ -60,7 +60,7 @@ const router = createBrowserRouter([
       {
         path:'/doctor/:id',
         element:<SingleDoctorInfo/>,
-        loader:({params})=>fetch(`http://localhost:5000/doctor/${params.id}`)
+        loader:({params})=>fetch(`https://house-doc-server-production.up.railway.app/doctor/${params.id}`)
       },
       
     ]

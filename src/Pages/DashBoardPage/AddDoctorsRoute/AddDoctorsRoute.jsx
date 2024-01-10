@@ -20,7 +20,7 @@ const AddDoctorsRoute = () => {
         const about_me = data.about_me;
         const picture = data.picture;
         const allDataStore = { name, degree, location, available_day, fee, experience, specializationOne, specializationTwo, about_me, picture };
-        fetch('http://localhost:5000/postDoctorData', {
+        fetch('https://house-doc-server-production.up.railway.app/postDoctorData', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

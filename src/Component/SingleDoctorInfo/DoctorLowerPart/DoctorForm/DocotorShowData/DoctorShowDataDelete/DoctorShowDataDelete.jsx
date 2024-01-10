@@ -6,7 +6,7 @@ function DoctorShowDataDelete({ item, refetch }) {
 
     const { _id } = item
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteReview/${id}`, {
+        fetch(`https://house-doc-server-production.up.railway.app/deleteReview/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

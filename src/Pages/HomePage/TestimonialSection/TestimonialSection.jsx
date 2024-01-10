@@ -16,7 +16,7 @@ function TestimonialSection() {
     const { isLoading, data } = useQuery({
         queryKey: ['testimonialData'],
         queryFn: () =>
-            fetch('http://localhost:5000/getTestimonialData').then((res) =>
+            fetch('https://house-doc-server-production.up.railway.app/getTestimonialData').then((res) =>
                 res.json()
             ),
     })

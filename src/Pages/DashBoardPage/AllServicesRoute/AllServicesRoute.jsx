@@ -7,7 +7,7 @@ const AllServicesRoute = () => {
     const [allDoc, setAllDoc] = useState([]);
     useEffect(() => {
         fetch(
-            `http://localhost:5000/getAllServiceData?search=${search}&sort=${acs ? "asc" : "desc"
+            `https://house-doc-server-production.up.railway.app/getAllServiceData?search=${search}&sort=${acs ? "asc" : "desc"
             }`
         )
             .then((res) => res.json())
@@ -26,7 +26,7 @@ const AllServicesRoute = () => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/deleteServicesData/${id}`, {
+                fetch(`https://house-doc-server-production.up.railway.app/deleteServicesData/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

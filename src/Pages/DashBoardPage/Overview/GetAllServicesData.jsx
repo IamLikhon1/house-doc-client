@@ -7,7 +7,7 @@ const GetAllServicesData = () => {
     const [allDoc, setAllDoc] = useState([]);
     useEffect(() => {
         fetch(
-            `http://localhost:5000/getAllServiceData?search=${search}&sort=${acs ? "asc" : "desc"
+            `https://house-doc-server-production.up.railway.app/getAllServiceData?search=${search}&sort=${acs ? "asc" : "desc"
             }`
           )
           .then((res) => res.json())

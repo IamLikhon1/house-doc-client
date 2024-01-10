@@ -7,7 +7,7 @@ const AllDoctorRoute = () => {
     const [allDoc, setAllDoc] = useState([]);
     useEffect(() => {
         fetch(
-            `http://localhost:5000/getDoctorsData?search=${search}&sort=${acs ? "asc" : "desc"
+            `https://house-doc-server-production.up.railway.app/getDoctorsData?search=${search}&sort=${acs ? "asc" : "desc"
             }`
         )
             .then((res) => res.json())
@@ -27,7 +27,7 @@ const AllDoctorRoute = () => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/deleteDoctorData/${id}`, {
+                fetch(`https://house-doc-server-production.up.railway.app/deleteDoctorData/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

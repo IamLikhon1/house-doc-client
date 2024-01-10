@@ -17,7 +17,7 @@ const AddServicesRoute = () => {
         const time = data.time;
         const allDataStore = { service_name, picture, available_day, fee, time };
 
-        fetch('http://localhost:5000/postServicesData', {
+        fetch('https://house-doc-server-production.up.railway.app/postServicesData', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

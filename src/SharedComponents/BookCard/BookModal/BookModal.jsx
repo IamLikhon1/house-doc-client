@@ -15,7 +15,7 @@ const BookModal = () => {
         const email = data.email;
         const allInfo = { name, service_name, number, email }
 
-        fetch('http://localhost:5000/postUserServiceData', {
+        fetch('https://house-doc-server-production.up.railway.app/postUserServiceData', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

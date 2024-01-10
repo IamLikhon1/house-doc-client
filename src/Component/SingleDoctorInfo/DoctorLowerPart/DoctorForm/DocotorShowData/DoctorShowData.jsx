@@ -11,7 +11,7 @@ function DoctorShowData() {
   const { isLoading, data, refetch } = useQuery({
     queryKey: ['getReview'],
     queryFn: () =>
-      fetch('http://localhost:5000/getReview').then((res) =>
+      fetch('https://house-doc-server-production.up.railway.app/getReview').then((res) =>
         res.json()
       ),
   })

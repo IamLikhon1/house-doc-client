@@ -7,7 +7,7 @@ function ExpertDoctorsSection() {
     const [allDoc, setAllDoc] = useState([]);
     useEffect(() => {
         fetch(
-            `http://localhost:5000/getDoctorsData?search=${search}&sort=${acs ? "asc" : "desc"
+            `https://house-doc-server-production.up.railway.app/getDoctorsData?search=${search}&sort=${acs ? "asc" : "desc"
             }`
           )
           .then((res) => res.json())
