@@ -17,7 +17,7 @@ function ExpertDoctorsSection() {
       const topRating=allDoc.filter(rate=>rate.star?.length===5)
     //   console.log(topRating);
     return (
-        <div className="max-w-7xl mx-auto lg:mt-36 mt-20">
+        <div className="max-w-7xl mx-auto lg:mt-36 mt-20 overflow-x-hidden">
             {/* title */}
             <div className="text-center">
                 <h2 className="text-4xl font-bold">Our Expert Doctors</h2>

@@ -22,7 +22,7 @@ function Doctor() {
   };
 
   return (
-    <div>
+    <div className="">
       {/* banner */}
       <SubBanner title='Doctors Page' subTitle='Doctors Page' />
       <div className="max-w-7xl mx-auto ">
@@ -42,7 +42,7 @@ function Doctor() {
 
         <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl text-center my-10 font-semibold text-[#3B3A3A]">Find Your Best Doctor For Best Service</h2>
-          <div className="grid lg:grid-cols-4 gap-5 mt-5 mx-2 lg:mx-0">
+          <div className="grid lg:grid-cols-4 gap-5 mt-5 mx-2 lg:mx-0 overflow-x-hidden">
             {
               allDoc?.map(item => (
                 <DoctorsCard key={item._id} item={item} />
