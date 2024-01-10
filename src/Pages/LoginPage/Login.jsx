@@ -50,7 +50,6 @@ function Login() {
           <div>
             <h2
               className="text-3xl font-bold text-center mb-10">Sign In to Doc House</h2>
-              <p className="font-semibold text-center">Remanded : Please Login With Google</p>
           </div>
           {/* input */}
           <div className="mt-5 lg:mt-8">
