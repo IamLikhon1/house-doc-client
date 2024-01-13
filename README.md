@@ -16,9 +16,9 @@ Doc-House is a robust healthcare management system designed to optimize the inte
 - **Frontend:** [React,Tailwind CSS,...]
 - **Backend:** [Node.js,Express.js]
 - **Database:** MongoDB.
+- **Authentication:** Firebase.
 
 ## Getting Started:
 
-1. **Project-Live-Link**
-     Live-Link : https://doc-house-0.web.app/
+1. **Project-Live-Link** https://doc-house-0.web.app/
    
