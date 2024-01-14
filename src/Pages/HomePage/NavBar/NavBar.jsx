@@ -3,10 +3,11 @@ import logo from '../../../assets/Logo.png'
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
 import toast from "react-hot-toast";
+import TopLoaderComponent from "../../../SharedComponents/TopLoaderComponent/TopLoaderComponent";
 function NavBar() {
   const { user, logOutUser } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
-  // const [progress, setProgress] = useState(0)
+  const [progress, setProgress] = useState(0)
 
   const handleLogOut = () => {
     logOutUser()
@@ -23,7 +24,7 @@ function NavBar() {
 
   return (
     <nav className="bg-[#07332F] p-1 container mx-auto">
-      {/* <TopLoaderAnimation progress={progress}setProgress={setProgress}/> */}
+      <TopLoaderComponent progress={progress}setProgress={setProgress}/>
       <div className="mx-auto sm:pl-6 lg:pl-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
@@ -37,28 +38,28 @@ function NavBar() {
             <div className="hidden lg:block lg:ml-96">
               <div className="space-x-6 lg:ml-72">
                 <Link
-                  // onClick={() => setProgress(100)}
+                  onClick={() => setProgress(100)}
                   to="/"
                   className="text-white  px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582] duration-500"
                 >
                   Home
                 </Link>
                 <Link
-                  // onClick={() => setProgress(100)}
+                  onClick={() => setProgress(100)}
                   to="/Appointment"
                   className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582] duration-500 "
                 >
                   Appointment
                 </Link>
                 <Link
-                  // onClick={() => setProgress(100)}
+                  onClick={() => setProgress(100)}
                   to="/Doctors"
                   className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
                 >
                   Doctors
                 </Link>
                 <Link
-                  // onClick={() => setProgress(100)}
+                  onClick={() => setProgress(100)}
                   to='/Services'
                   className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
                 >
@@ -67,9 +68,10 @@ function NavBar() {
                 {/* profile */}
 
                 {
-                  user ? <div className="cursor-pointer dropdown dropdown-hover dropdown-end">
+                  user ? <div 
+                  onClick={() => setProgress(100)}
+                  className="cursor-pointer dropdown dropdown-hover dropdown-end">
                     {user?.photoURL ? <img src={user?.photoURL} className="w-[50%] h-[50%] rounded-full relative top-4" alt="" /> : <button
-                      // onClick={() => setProgress(100)}
                       onClick={handleLogOut}
                       className="text-white px-10 py-2 rounded-lg text-lg font-semibold bg-[#F7A582] hover:bg-[#F7A582]  duration-500 cursor-pointer"
                     >
@@ -84,7 +86,6 @@ function NavBar() {
                       <li className="flex items-center justify-center">
 
                         <button
-                          // onClick={() => setProgress(100)}
                           onClick={handleLogOut}
                           className="text-white px-10 py-2 rounded-lg text-lg font-semibold bg-[#07332F] hover:bg-[#07332F]  duration-500 cursor-pointer"
                         >
@@ -94,7 +95,6 @@ function NavBar() {
                       </li>
                     </ul> : " "}
                   </div> : <Link
-                    // onClick={() => setProgress(100)}
                     to='/login'
                     className="text-white px-3 py-2 rounded-md text-lg font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
                   >
@@ -145,24 +145,27 @@ function NavBar() {
           <div className="px-2 pt-2 pb-3 space-y-2 sm:px-3">
             <Link
               to="/"
+              onClick={() => setProgress(100)}
               className="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500 "
             >
               Home
             </Link>
             <Link
+              onClick={() => setProgress(100)}
               to="/Appointment"
               className="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
             >
               Appointment
             </Link>
             <Link
+              onClick={() => setProgress(100)}
               to="/Doctors"
               className="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
             >
               Doctors
             </Link>
             <Link
-              // onClick={() => setProgress(100)}
+              onClick={() => setProgress(100)}
               to='/Services'
               className="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[#F7A582] focus:text-[#F7A582]  duration-500"
             >
