@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import ShowDataOnTop from "../../SharedComponents/ShowDataOnTop/ShowDataOnTop";
 
 function Login() {
-  const { userLogIn} = useContext(AuthContext)
+  const { userLogIn } = useContext(AuthContext)
   const navigate = useNavigate()
   const location = useLocation()
   const from = location.state?.from?.pathname || '/';
@@ -20,12 +20,14 @@ function Login() {
   } = useForm()
 
   const onSubmit = (data) => {
+    const toastId = toast.loading("Loading...");
     const email = data.email;
     const password = data.password;
     userLogIn(email, password)
       .then(result => {
         const signIn = result.user;
-        navigate(from,{replace:true})
+        navigate(from, { replace: true })
+        toast.dismiss(toastId);
         toast.success(`${signIn?.displayName} You Login successfully`);
         reset();
       })
@@ -40,7 +42,7 @@ function Login() {
 
         {/* Image */}
         <div className="col-span-6">
-            <SignInAndLoginImage/>
+          <SignInAndLoginImage />
         </div>
         {/* Image */}
 

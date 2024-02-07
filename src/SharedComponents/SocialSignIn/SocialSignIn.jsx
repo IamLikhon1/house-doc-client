@@ -10,11 +10,13 @@ function SocialSignIn() {
     const from = location.state?.from?.pathname || '/';
     
     const handleGoogleSignIn=()=>{
+        const toastId=toast.loading('Loading...')
         googleLogin()
         .then(result=>{
             const googleSign=result.user;
             // console.log(googleSign)
             navigate(from,{replace:true})
+            toast.dismiss(toastId)
             toast.success(`Welcome ${googleSign?.displayName} successfully Continue with Google`)
 
         })

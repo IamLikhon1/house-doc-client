@@ -17,6 +17,7 @@ function Register() {
   } = useForm()
 
   const onSubmit = (data) => {
+    const toastId=toast.loading('Loading...')
     const name = data.name
     const email = data.email;
     const password = data.password;
@@ -26,6 +27,7 @@ function Register() {
         console.log(loggedUser);
         updateUserProfile(name)
           .then(() => {
+            toast.dismiss(toastId)
             toast.success(`Welcome ${loggedUser?.displayName} You successfully create account`)
             navigate(from, { replace: true })
             reset();
@@ -88,7 +90,7 @@ function Register() {
 
               {/* button */}
               <div>
-                <input type="submit" value='LOGIN' className="mt-8 w-full  px-5 py-3 rounded-md border-2 bg-[#F7A582] text-white cursor-pointer font-medium" />
+                <input type="submit" value='Register' className="mt-8 w-full  px-5 py-3 rounded-md border-2 bg-[#F7A582] text-white cursor-pointer font-medium" />
               </div>
             </form>
 
