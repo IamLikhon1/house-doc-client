@@ -28,7 +28,7 @@ function Service() {
         <div className="lg:flex items-center justify-between">
           {/* search */}
           <div className="flex mt-5">
-            <input type="text" ref={searchRef}  className="mt-5 ml-2 lg:ml-0 w-fit px-8 lg:px-44 py-4 rounded-lg border-2 focus:outline-none bg-[#F3F3F3]" placeholder="Search by Service Name" />
+            <input type="text" onChange={(e)=>setSearch(e.target.value)} ref={searchRef}  className="mt-5 ml-2 lg:ml-0 w-fit px-8 lg:px-44 py-4 rounded-lg border-2 focus:outline-none bg-[#F3F3F3]" placeholder="Search by Service Name" />
             <button onClick={handleSearch} className='px-4 lg:px-14  rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-4 lg:mt-5 ml-3 hover:bg-[#F7A582] hover:text-white duration-500'>Search</button>
           </div>
           {/* sort */}
